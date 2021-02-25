@@ -77,9 +77,6 @@ function updateScore() { //fonction pour récupérer les valeurs et mettre à jo
 			nomS[l][k].dataset.nom = nomJoueur;
 // vérifier pourquoi la boucle ne fonctionne pas
 		}
-		for (let m=0;m<6;m++)
-		{
-		}
 	}
 	for(let l=0;l<(nbreJoueur||3);l++){// ne fontionne pas si intégré dans la précédente boucle for
 	sumScores[l].innerHTML=scores[l]
@@ -114,6 +111,7 @@ function ajoutplayer()
 
 		for (var j =1;(j<ligneS.length-1); j++) {
 			cells[j] = ligneS[j].insertCell(-1);
+			cells[j].className='nom'+j;
 			var input = document.createElement('input');
 			input.type='number';
 			classL=ligneS[j].id+0;
