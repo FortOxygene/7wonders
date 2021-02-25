@@ -1,0 +1,99 @@
+body
+{
+	background-color : #183f5d;
+	text-align : center;
+}
+
+table,td,th
+{
+	border: 3px solid black;
+	border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto ;
+}
+
+input
+{
+	border-style: none;
+	text-align:center;
+	background-color : #1fe0;
+}
+input[type=text]
+{
+	background-color:  #1fe0;
+	font-weight :bold;
+	width: 100px;
+}
+.guilde{background-color: #8A2BE2;}
+#Violet0{background-color : #882bab;}
+.science{background-color: #48ad48;}
+#Vert0{	background-color: green;}
+.militaire{background-color: #ee7359;}
+#Rouge0{background-color :red;}
+.bleue{background-color: #5574f9;}
+#Bleue0{background-color: #234bfa;}
+.commerce{background-color:  #fbfc87;}
+#Jaune0{background-color :#f2f522;}
+.merveille{background-color :#9b6137;}
+#Merveille0{background-color :#8B4513;}
+.scoreTot{text-align : right;}
+#meilleur{color : red;}
+.argent{background-color: #e6daa0;}
+#Argent0{background-color: #d1c37d}
+.cities{background-color : #646461;}
+#Noir0{	background-color :#3c3c3b;}
+.armada{background-color: #6bcccd;}
+#Turquoise0 {background-color: #31abad}
+.leader
+{
+	background-color: #FFFAF0;
+	color : black;
+}
+#Blanc0
+{
+	background-color: #FFF8DC;
+	color : black;
+}
+
+
+   @media screen and (max-width:800px) {
+  	body {
+  		color : black;
+  	}
+  	table th {
+display: none;
+}
+
+table, thead, tbody, th, td, tr{
+display: block;
+}
+
+table td {
+display: block;
+text-align: right;
+border : none;
+position: relative;
+border-bottom: 4px solid black; 
+}
+table input{
+	color : purple;
+  margin: auto;
+}
+	td:nth-of-type(1){text-align:center;}
+	td:nth-of-type(2):before { content: attr(data-nom); float: left; }
+	td:nth-of-type(3):before { content: attr(data-nom); float: left; }
+	td:nth-of-type(4):before { content: attr(data-nom); float: left; }
+	/*td:nth-of-type(4):before { content: "Joueur 3"; float: left;}*/
+	td:nth-of-type(5):before { content: attr(data-nom); float: left;}
+	td:nth-of-type(6):before { content: attr(data-nom); float: left;}
+	td:nth-of-type(7):before { content: attr(data-nom); float: left;}
+	td:nth-of-type(8):before { content: attr(data-nom); float: left;}
+	td:nth-of-type(9):before { content: attr(data-nom); float: left;}
+
+/*table td:before {
+content: attr(id);
+float: left;
+font-weight: bold;
+}*/
+}
+   }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <link rel="stylesheet" href="abc.css">
+    <link rel="icon" type="image/png" href="blason-onglet.png" /> 
+    <meta charset="utf-8"/>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> 7wonder score</title>
+
+<script src="7wonder.js" defer></script>
+</head>
+<body>
+        <select name="nbrJoueur" id="player-select">
+    <option value="">--Nombre de joueur--</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option valclass='nbPlayer'ue="8">8</option>
+</seleclass='nbPlayer'ct>
+
+<input id='submit'type="submit" value="Validez">
+<button id='delplayer'>supprimer un joueur</button>
+<p>Selectionner une extension :</p>
+
+<div>
+  <input type="checkbox" id="Leaders" name="Leader">
+  <label>Leaders</label>
+  <input type="checkbox" id="Cities" name="Cities">
+  <label >Cities</label>
+ <input type="checkbox" id="Armada" name="Armada" onclick="extensionArmada()">
+  <label >Armada</label>
+  <input type="checkbox" id="Babel" name="Babel" onclick="extensionBabel()">
+  <label >Babel</label>
+</div>
+
+    </p>
+        <br class='feu eau' id='trr'><br><br><br>
+        <table id='tableau'>
+            <tr id='joueurs'class='ligne'>
+                <td id='joueurs0' class='nbPlayer'> Catégorie</td>
+                <td> <input class='nbPlayer' type='text' value="Joueur 1"></td>
+                <td> <input class='nbPlayer' type='text' value="Joueur 2"></td>
+                <td> <input class='nbPlayer' type='text' value="Joueur 3"></td>
+             <tr id="Argent" class='ligne argent'>
+                <td class='argent' id='Argent0'>Argent &#128178;</td>
+                <td class='nom1'><input type='number' class='score scoreJoueur1'id="Argent1" name="Argent" min='-15' ></td>
+                <td class='nom1'><input type='number' class='score scoreJoueur2'id="Argent2" name="Argent" min='-15'></td>
+                <td class='nom1'><input type='number' class='score scoreJoueur3'id="Argent3" name="Argent" min='-15'></td>
+            </tr>
+            <tr id="Rouge" class='ligne militaire'>
+                <td class='militaire' id='Rouge0'>Militaire</td>
+                <td class='nom2'><input type='number' class='militaire scoreJoueur1'id="Rouge1" name="Rouge" min='-6'></td>
+                <td class='nom2'><input type='number' class='militaire scoreJoueur2'id="Rouge2" name="Rouge" min='-6'></td>
+                <td class='nom2'><input type='number' class='militaire scoreJoueur3'id="Rouge3" name="Rouge" min='-6'></td>
+            </tr>
+            <tr class='ligne merveille'id="Merveille">
+                <td class='merveille'id="Merveille0">Merveille &#127983; &#127984;</td>
+                <td class='nom3'><input type='number' class='score scoreJoueur1 merveille'id="Merveille1" name="Merveille" min='0'></td>
+                <td class='nom3'><input type='number' class='score scoreJoueur2 merveille'id="Merveille2" name="Merveille" min='0'></td>
+                <td class='nom3'><input type='number' class='score scoreJoueur3 merveille'id="Merveille3" name="Merveille" min='0'></td>
+            </tr>
+            <tr class='ligne commerce'id='Jaune'>
+                <td class='commerce'id='Jaune0'>Commerce</td>
+                <td class='nom4'><input type='number' class='score scoreJoueur1 commerce'id="Jaune1" name="Jaune" min='0'></td>
+                <td class='nom4'><input type='number' class='score scoreJoueur2 commerce'id="Jaune2" name="Jaune" min='0'></td>
+                <td class='nom4'><input type='number' class='score scoreJoueur3 commerce'id="Jaune3" name="Jaune" min='0'></td>
+            </tr>
+            <tr class='ligne bleue' id="Bleue">
+                <td class='bleue'id="Bleue0">Bleue</td>
+                <td class='nom5'><input type='number'class='score scoreJoueur1 bleue' id="Bleue1" name="Bleue" min='0'></td>
+                <td class='nom5'><input type='number'class='score scoreJoueur2 bleue' id="Bleue2" name="Bleue" min='0'></td>
+                <td class='nom5'><input type='number'class='score scoreJoueur3 bleue' id="Bleue3" name="Bleue" min='0'></td>
+            </tr>
+            <tr class='ligne science'id="Vert">
+                <td class='science'id="Vert0">Science</td>
+                <td class='nom6'><input type="number" class='score scoreJoueur1 science'id="Vert1" name="Science" min='0'></td>
+                <td class='nom6'><input type="number" class='score scoreJoueur2 science'id="Vert2" name="Science" min='0'></td>
+                <td class='nom6'><input type="number" class='score scoreJoueur3 science'id="Vert3" name="Science" min='0'></td>
+            </tr>
+            <tr class='ligne guilde'id="Violet">
+                <td class='guilde'id="Violet0">Guilde</td>
+                <td class='nom7'><input type='number'class='score scoreJoueur1 guilde' id="Violet1" name="Guilde" min='0'></td>
+                <td class='nom7'><input type='number'class='score scoreJoueur2 guilde' id="Violet2" name="Guilde" min='0'></td>
+                <td class='nom7'><input type='number'class='score scoreJoueur3 guilde' id="Violet3" name="Guilde" min='0'></td>
+                            </tr>
+            <tr class='ligne'>
+                <td>Score total</td>
+                <td class='scoreTot'id='scoreTot1'>0</td>
+                <td class='scoreTot'id='scoreTot2'>0</td>
+                <td class='scoreTot'id='scoreTot3'>0</td>
+            </tr>
+        </table>
+        <br>
+        <button id='reset'>Réinitialiser le tableau</button>
+</body>
+</html>
