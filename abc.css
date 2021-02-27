@@ -18,6 +18,11 @@ input
 	text-align:center;
 	background-color : #1fe0;
 }
+input[type=submit]
+{
+	background-color:  grey;
+	width: 100px;
+}
 input[type=text]
 {
 	background-color:  #1fe0;
@@ -55,7 +60,6 @@ input[type=text]
 	color : black;
 }
 
-
    @media screen and (max-width:800px) {
   	body {
   		color : black;
@@ -64,24 +68,34 @@ input[type=text]
   	table th {
 display: none;
 }
+{
+	font-size:16px;
+}
 
 table, thead, tbody, th, td, tr{
 display: block;
+border:none;
 }
+
+tr{border-radius:5px;}
 
 table td {
 display: block;
 text-align: right;
-border : none;
+border : 1px solid black;
 position: relative;
-border-bottom: 4px solid black; 
+}
+#Rouge0,#Blanc0,#Argent0,#Violet0,#Jaune0,#Vert0,#Bleue0,#Noir0,#Turquoise0,#Merveille0
+{
+	margin-top: 15px;
 }
 table input{
 	color : purple;
+	text-align:center;
   margin: auto;
 }
 	td:nth-of-type(1){text-align:center;}
-	td:nth-of-type(2):before { content: attr(data-nom); float: left; }
+	td:nth-of-type(2):before { content: attr(data-nom); float: center; }
 	td:nth-of-type(3):before { content: attr(data-nom); float: left; }
 	td:nth-of-type(4):before { content: attr(data-nom); float: left; }
 	/*td:nth-of-type(4):before { content: "Joueur 3"; float: left;}*/
@@ -90,11 +104,6 @@ table input{
 	td:nth-of-type(7):before { content: attr(data-nom); float: left;}
 	td:nth-of-type(8):before { content: attr(data-nom); float: left;}
 	td:nth-of-type(9):before { content: attr(data-nom); float: left;}
-
-/*table td:before {
-content: attr(id);
-float: left;
-font-weight: bold;
-}*/
+	td:nth-of-type(10):before { content: attr(data-nom); float: left;}
 }
    }

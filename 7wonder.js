@@ -8,6 +8,8 @@ https://css-tricks.com/responsive-data-tables/  thanks for the help for the Tabl
 https://www.digitalocean.com/community/tutorials/css-attr-function
 https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
 https://stackoverflow.com/questions/15547198/export-html-table-to-csv
+https://github.com/twbs/bootstrap/issues/2159
+https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone/46254706#46254706
 */
 let tableau = document.getElementById('tableau');
 let player = document.getElementById('player-select');
@@ -31,7 +33,10 @@ let nom5=document.getElementsByClassName('nom5');
 let nom6=document.getElementsByClassName('nom6');
 let nom7=document.getElementsByClassName('nom7');
 let nom8=document.getElementsByClassName('nom8');
-let nomS=[nom1,nom2,nom3,nom4,nom5,nom6,nom7,nom8];
+let nom9=document.getElementsByClassName('nom9');
+let nom10=document.getElementsByClassName('nom10');
+let nom11=document.getElementsByClassName('nom11');
+let nomS=[nom1,nom2,nom3,nom4,nom5,nom6,nom7,nom8,nom9,nom10,nom11];
 let sumScores=document.getElementsByClassName('scoreTot');
 let nbPlayer=document.getElementsByClassName('nbPlayer');
 let leaderid= document.getElementById('Leaders');
@@ -75,8 +80,10 @@ function updateScore() { //fonction pour récupérer les valeurs et mettre à jo
 			num=(isNaN(parseInt(scJoueurs[k][l].value))? 0:parseInt(scJoueurs[k][l].value))+num;
 			scores[k]=num;
 			nomS[l][k].dataset.nom = nomJoueur;
+			nomS[10][k].dataset.nom=nomJoueur;
 // vérifier pourquoi la boucle ne fonctionne pas
 		}
+
 	}
 	for(let l=0;l<(nbreJoueur||3);l++){// ne fontionne pas si intégré dans la précédente boucle for
 	sumScores[l].innerHTML=scores[l]
@@ -124,7 +131,7 @@ function ajoutplayer()
   			//cells[j].data=nomJoueur;
 		}
 		cells[j] = ligneS[j].insertCell(-1);
-		cells[j].className='scoreTot';
+		cells[j].className='scoreTot nom11';
   	}
 }
 function resetfc(){
@@ -159,6 +166,7 @@ function extensionleader(){
 	cellExt[0].appendChild(input);
 	for(let j=1; (j<=3)||(j<=nbreJoueur);j++){
 		cellExt[j]=leader.insertCell(-1);
+		cellExt[j].className='nom8';
 		input=document.createElement('input');
 		input.type='number';
 		input.id='leader'+j;
@@ -187,6 +195,7 @@ function extensioncities(){
 	cellExt[0].appendChild(input);
 	for(let j=1; (j<=3)||(j<=nbreJoueur);j++){
 		cellExt[j]=citiesL.insertCell(-1);
+		cellExt[j].className='nom9';
 		input=document.createElement('input');
 		input.type='number';
 		input.id='cities'+j;
@@ -215,6 +224,7 @@ function extensionArmada(){
 	input=document.createTextNode('Armada &#9973 &#127965');
 	for(let j=1; (j<=3)||(j<=nbreJoueur);j++){
 		cellExt[j]=armadaL.insertCell(-1);
+		cellExt[j].className='nom10';
 		input=document.createElement('input');
 		input.type='number';
 		input.id='Armada'+j;

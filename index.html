@@ -19,13 +19,12 @@
     <option value="6">6</option>
     <option value="7">7</option>
     <option valclass='nbPlayer'ue="8">8</option>
-</seleclass='nbPlayer'ct>
-
-<input id='submit'type="submit" value="Validez">
-<button id='delplayer'>supprimer un joueur</button>
-<p>Selectionner une extension :</p>
-
-<div>
+</select>
+<button id='submit'>Validez</button>
+<br><br>
+<button id='delplayer'>supprimer le dernier joueur</button>
+<br>
+<p>Selection des extensions :<br>
   <input type="checkbox" id="Leaders" name="Leader">
   <label>Leaders</label>
   <input type="checkbox" id="Cities" name="Cities">
@@ -33,11 +32,7 @@
  <input type="checkbox" id="Armada" name="Armada" onclick="extensionArmada()">
   <label >Armada</label>
   <input type="checkbox" id="Babel" name="Babel" onclick="extensionBabel()">
-  <label >Babel</label>
-</div>
-
-    </p>
-        <br class='feu eau' id='trr'><br><br><br>
+  <label >Babel</label></p>
         <table id='tableau'>
             <tr id='joueurs'class='ligne'>
                 <td id='joueurs0' class='nbPlayer'> Catégorie</td>
@@ -69,13 +64,13 @@
                 <td class='nom4'><input type='number' class='score scoreJoueur3 commerce'id="Jaune3" name="Jaune" min='0'></td>
             </tr>
             <tr class='ligne bleue' id="Bleue">
-                <td class='bleue'id="Bleue0">Bleue</td>
+                <td class='bleue'id="Bleue0">Bâtiment Civil</td>
                 <td class='nom5'><input type='number'class='score scoreJoueur1 bleue' id="Bleue1" name="Bleue" min='0'></td>
                 <td class='nom5'><input type='number'class='score scoreJoueur2 bleue' id="Bleue2" name="Bleue" min='0'></td>
                 <td class='nom5'><input type='number'class='score scoreJoueur3 bleue' id="Bleue3" name="Bleue" min='0'></td>
             </tr>
             <tr class='ligne science'id="Vert">
-                <td class='science'id="Vert0">Science</td>
+                <td class='science'id="Vert0">Bâtiment scientifique</td>
                 <td class='nom6'><input type="number" class='score scoreJoueur1 science'id="Vert1" name="Science" min='0'></td>
                 <td class='nom6'><input type="number" class='score scoreJoueur2 science'id="Vert2" name="Science" min='0'></td>
                 <td class='nom6'><input type="number" class='score scoreJoueur3 science'id="Vert3" name="Science" min='0'></td>
@@ -88,9 +83,9 @@
                             </tr>
             <tr class='ligne'>
                 <td>Score total</td>
-                <td class='scoreTot'id='scoreTot1'>0</td>
-                <td class='scoreTot'id='scoreTot2'>0</td>
-                <td class='scoreTot'id='scoreTot3'>0</td>
+                <td class='scoreTot nom11'id='scoreTot1'>0</td>
+                <td class='scoreTot nom11'id='scoreTot2'>0</td>
+                <td class='scoreTot nom11'id='scoreTot3'>0</td>
             </tr>
         </table>
         <br>
