@@ -78,15 +78,7 @@ function updateScore() { //fonction pour récupérer les valeurs et mettre à jo
 	sumScores[pos].id='meilleur';
 	}
 }
-function ajoutdeLigne(){ // à conserver pour le moment pour les extensions
-	var ligne =tableau.insertRow(-1);
-	for (var i = 0; i < nbreJoueur; i++) {
-		var cellule =ligne.insertCell();
-		var texte = document.createTextNode('nouvelle cellule');
-		cellule.appendChild(texte);
-	}
-	compte++;
-}
+
 function ajoutplayer()
 {
 	var textes=[];
