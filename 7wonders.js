@@ -1,16 +1,3 @@
-/* to do 
-- fonctionnement mobile
-- signifier qu'une cellule est modifiable;
-- exporter en CSV
-- préselectionner l'input suivant
-- premier test d'hébergement
-https://css-tricks.com/responsive-data-tables/  thanks for the help for the Table in mobile mode 
-https://www.digitalocean.com/community/tutorials/css-attr-function
-https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
-https://stackoverflow.com/questions/15547198/export-html-table-to-csv
-https://github.com/twbs/bootstrap/issues/2159
-https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone/46254706#46254706
-*/
 let tableau = document.getElementById('tableau');
 let player = document.getElementById('player-select');
 let submit=document.getElementById('submit');
@@ -75,13 +62,11 @@ function updateScore() { //fonction pour récupérer les valeurs et mettre à jo
 	for(let k=0;k<(nbreJoueur||3);k++){
 		num = 0;
 		nomJoueur=nbPlayer[k+1].value;
-		nomS[0][k].dataset.nom='Nom du joueur : ';
 		for(let l=0;l<joueur1.length;l++){
 			num=(isNaN(parseInt(scJoueurs[k][l].value))? 0:parseInt(scJoueurs[k][l].value))+num;
 			scores[k]=num;
 			nomS[l][k].dataset.nom = nomJoueur +' :';
 			nomS[10][k].dataset.nom=nomJoueur+': ';
-// vérifier pourquoi la boucle ne fonctionne pas
 		}
 
 	}
@@ -93,7 +78,6 @@ function updateScore() { //fonction pour récupérer les valeurs et mettre à jo
 	sumScores[pos].id='meilleur';
 	}
 }
-	/*scoreScience =isNaN(parseInt(science.value))? 0 : parseInt(science.value);// condition pour vérifier si c'est bien un nombre*/
 function ajoutdeLigne(){ // à conserver pour le moment pour les extensions
 	var ligne =tableau.insertRow(-1);
 	for (var i = 0; i < nbreJoueur; i++) {
@@ -110,6 +94,7 @@ function ajoutplayer()
 	nbreJoueur=player.value;
 	for(;(nom1.length) <nbreJoueur;i++){//
 		cells[0]=ligneS[0].insertCell(-1);
+		cells[0].dataset.nom='Nom joueur '+i+' :'
 		var input2=document.createElement('input');
 		input2.type = 'text';
 		input2.value='Joueur '+ i;
@@ -121,7 +106,6 @@ function ajoutplayer()
 			cells[j].className='nom'+j;
 			var input = document.createElement('input');
 			input.type='tel';
-			//test ='scoreJoueur'+i;
 			input.className='scoreJoueur'+i;
 			input.id=ligneS[j].id+i;
   			cells[j].appendChild(input);
@@ -129,6 +113,7 @@ function ajoutplayer()
 		cells[j] = ligneS[j].insertCell(-1);
 		cells[j].className='scoreTot nom11';
   	}
+  	updateScore()
 }
 function resetfc(){
 	for(let k=0;k<(nbreJoueur||3);k++){
@@ -162,7 +147,7 @@ function extensionleader(){
 	cellExt[0].appendChild(input);
 	for(let j=1; (j<=3)||(j<=nbreJoueur);j++){
 		cellExt[j]=leader.insertCell(-1);
-		cellExt[j].className='nom8';
+		cellExt[j].className='nom'+(ligneS.length-2);
 		input=document.createElement('input');
 		input.type='tel';
 		input.id='leader'+j;
@@ -173,10 +158,10 @@ function extensionleader(){
 	for(let k=0; k<ligneS.length;k++){
 		if( ligneS[k].id==='Blanc'){
 			tableau.deleteRow(k);
-			updateScore();// lance la fonction update score pour vérifier les données de la ligne supprimée
 		}
 	}
 }
+			updateScore();// lance la fonction update score pour vérifier les données de la ligne supprimée
 }
 function extensioncities(){
 	if( cities.checked === true){
@@ -191,7 +176,7 @@ function extensioncities(){
 	cellExt[0].appendChild(input);
 	for(let j=1; (j<=3)||(j<=nbreJoueur);j++){
 		cellExt[j]=citiesL.insertCell(-1);
-		cellExt[j].className='nom9';
+		cellExt[j].className='nom'+(ligneS.length-2);
 		input=document.createElement('input');
 		input.type='tel';
 		input.id='cities'+j;
@@ -202,12 +187,13 @@ function extensioncities(){
 	for(let k=0; k<ligneS.length;k++){
 		if(ligneS[k].id==='Noir'){
 		tableau.deleteRow(k);
-		updateScore();
 		}
 	}
 }
+		updateScore();
 }
-function extensionArmada(){
+function extensionArmada()
+{
 	if( armada.checked === true){
 		let Armada; 
 	let cellExt=[];
@@ -220,25 +206,25 @@ function extensionArmada(){
 	input=document.createTextNode('Armada &#9973 &#127965');
 	for(let j=1; (j<=3)||(j<=nbreJoueur);j++){
 		cellExt[j]=armadaL.insertCell(-1);
-		cellExt[j].className='nom10';
+		cellExt[j].className='nom'+(ligneS.length-2);
 		input=document.createElement('input');
 		input.type='tel';
 		input.id='Armada'+j;
 		input.className= 'scoreJoueur'+j;
 		cellExt[j].appendChild(input);
 	}
-}else{
+	}else{
 	for(let k=0; k<ligneS.length;k++){
 		if(ligneS[k].id==='Turquoise'){
 		tableau.deleteRow(k);
-		updateScore();
 		}
 	}
-}
+		}
+		updateScore();
 }
 function extensionBabel(){
 		if( babel.checked === true){
-			merveille.innerHTML='Merveille &#127983; &#127984; \n <br>et Babel &#128508;';
+			merveille.innerHTML='Merveille &#127983; &#127984; et Babel &#128508;';
 		}else{
 			merveille.innerHTML='Merveille &#127983; &#127984;';
 		}
