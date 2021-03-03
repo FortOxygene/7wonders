@@ -105,7 +105,7 @@ function ajoutplayer()
 			cells[j] = ligneS[j].insertCell(-1);
 			cells[j].className='nom'+j;
 			var input = document.createElement('input');
-			input.type='tel';
+			input.type='number';
 			input.className='scoreJoueur'+i;
 			input.id=ligneS[j].id+i;
   			cells[j].appendChild(input);
