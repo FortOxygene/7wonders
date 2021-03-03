@@ -29,6 +29,10 @@ input[type=text]
 	font-weight :bold;
 	width: 100px;
 }
+#total
+{
+	background-color :#436885;
+}
 .guilde{background-color: #8A2BE2;}
 #Violet0{background-color : #882bab;}
 .science{background-color: #48ad48;}
@@ -72,6 +76,7 @@ display: none;
 table, thead, tbody, th, td, tr{
 display: block;
 border:none;
+font-size:16px;
 }
 input{background-color: #1fe0;font-size:16px;}
 tr{border-radius:15px;border : 3px solid black;margin-top:15px;}
@@ -85,31 +90,33 @@ border-right:none;
 border-left:none;
 border-collapse:collapse;
 position: relative;
+font-size :16px;
 }
 #Rouge0,#Blanc0,#Argent0,#Violet0,#Jaune0,#Vert0,#Bleue0,#Noir0,#Turquoise0,#Merveille0,#Score0,#joueurs0
 {
 	border-radius:12px 12px 0px 0px;
 	border: none;
+	font-weight: bold;
 }
+.scoreTot{text-align : right; padding-right:5%;}
+
 table input{
-	color : purple;
 	text-align:center;
 	width:50%;
 	border-left: 1px solid black;
   margin: auto;
 }
 input[type=text]{width:50%;}
-
-	td:nth-of-type(1){text-align:center;}
-	td:nth-of-type(2):before { content: attr(data-nom);float: left; margin-left: 5%}
-	td:nth-of-type(3):before { content: attr(data-nom); float: left;margin-left: 5% }
-	td:nth-of-type(4):before { content: attr(data-nom); float: left; margin-left: 5%}
+td:nth-of-type(1){text-align:center;}
+td:nth-of-type(2):before { content: attr(data-nom);float: left; margin-left: 5%;font-size:16px;}
+td:nth-of-type(3):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px; }
+td:nth-of-type(4):before { content: attr(data-nom); float: left; margin-left: 5%;font-size:16px;}
 	/*td:nth-of-type(4):before { content: "Joueur 3"; float: left;}*/
-	td:nth-of-type(5):before { content: attr(data-nom); float: left;margin-left: 5%}
-	td:nth-of-type(6):before { content: attr(data-nom); float: left;margin-left: 5%}
-	td:nth-of-type(7):before { content: attr(data-nom); float: left;margin-left: 5%}
-	td:nth-of-type(8):before { content: attr(data-nom); float: left;margin-left: 5%}
-	td:nth-of-type(9):before { content: attr(data-nom); float: left;margin-left: 5%}
-	td:nth-of-type(10):before { content: attr(data-nom); float: left;margin-left: 5%}
+td:nth-of-type(5):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
+td:nth-of-type(6):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
+td:nth-of-type(7):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
+td:nth-of-type(8):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
+td:nth-of-type(9):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
+td:nth-of-type(10):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
 }
    }
