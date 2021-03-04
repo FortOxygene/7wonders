@@ -86,10 +86,10 @@ function ajoutplayer()
 	nbreJoueur=player.value;
 	for(;(nom1.length) <nbreJoueur;i++){//
 		cells[0]=ligneS[0].insertCell(-1);
-		cells[0].dataset.nom='Nom joueur '+i+' :'
+		cells[0].dataset.nom='Player '+i+' name :'
 		var input2=document.createElement('input');
 		input2.type = 'text';
-		input2.value='Joueur '+ i;
+		input2.value='Player '+ i;
 		input2.className='nbPlayer';
 		cells[0].appendChild(input2);
 
