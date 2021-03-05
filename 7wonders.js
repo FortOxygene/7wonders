@@ -125,6 +125,7 @@ function resetfc(){
 function delPlayer(){
 	if(nbPlayer.length>4){
 		nbreJoueur--;
+		i--;
 	for(let j=0 ;j<ligneS.length; j++)
 	{
 		ligneS[j].deleteCell(-1);
