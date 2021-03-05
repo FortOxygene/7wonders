@@ -131,4 +131,3 @@ td:nth-of-type(8):before { content: attr(data-nom); float: left;margin-left: 5%;
 td:nth-of-type(9):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
 td:nth-of-type(10):before { content: attr(data-nom); float: left;margin-left: 5%;font-size:16px;}
 }
-   }
