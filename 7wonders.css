@@ -84,6 +84,9 @@ input[type=text]
   	table th {
 display: none;
 }
+	   select
+	   {
+		   fontr-size:16px;}
 
 table, thead, tbody, th, td, tr{
 display: block;
