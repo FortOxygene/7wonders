@@ -86,8 +86,8 @@ display: none;
 }
 	   select
 	   {
-		   fontr-size:16px;
-	   color : orange;}
+		   font-size:16px;
+	   color : green;}
 
 table, thead, tbody, th, td, tr{
 display: block;
