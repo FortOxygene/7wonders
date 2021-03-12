@@ -229,3 +229,62 @@ function extensionBabel(){
 			merveille.innerHTML='Merveille &#127983; &#127984;';
 		}
 }
+function exportTableToCSV(filename) {
+    var csv = [],scoreP;
+    var rows = document.querySelectorAll("table tr");
+    	var rowHead = [],cols;
+
+		for(let l=0;l<=(joueur1.length+1);l++){
+			cols = rows[l].querySelectorAll("td, th")
+		rowHead.push(rows[l].querySelector('td').innerText);
+		}
+		csv.push(rowHead.join(",")); 
+
+
+    for(let k=0;k<(nbreJoueur||3);k++){
+   var row = [], cols = rows[i].querySelectorAll("td, th");
+
+		for(let l=0;l<=joueur1.length;l++){
+			if(l<joueur1.length){//row.push(rows[l].innerText);
+			row.push(scJoueurs[k][l].value);}
+			else{
+				scoreP=rows[joueur1.length+1].querySelectorAll('td');
+				row.push(scoreP[k+1].innerText);
+			}
+
+// il manque nom des catégorie et total 
+		
+		}
+			row.unshift(nom1[k].dataset.nom);
+			csv.push(row.join(","));  
+    }
+
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+
+function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide download link
+    downloadLink.style.display = "none";
+
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+
+    // Click download link
+    downloadLink.click();
+}
